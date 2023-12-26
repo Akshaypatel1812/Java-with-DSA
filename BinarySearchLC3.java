@@ -1,11 +1,11 @@
-public class binarySearch {
-
-    static int binarysearch(int []arr,int target){
+public class BinarySearchLC3 {
+    static string binarysearch(int []arr,int target){
          int start=0;
         int end=arr.length-1;
         
         
         while(start<=end){
+         
             int mid=start+(end-start)/2;   // good practive to write this type of mid index
             if(target<arr[mid]){
                 end=mid-1;
@@ -15,10 +15,10 @@ public class binarySearch {
                 start=mid+1;
             }
             else{
-                return mid;
+                return new int[]{si,ei};
             }
         }
-        return -1;
+        return new int[]{-1,-1}
         
     }
     public static void main(String[] args) {
