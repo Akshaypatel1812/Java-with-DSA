@@ -1,11 +1,11 @@
-public class AddStrings {
+public class AddStringsLC5 {
     public static String addStrings(String num1, String num2){
         // char [] a=num1.toCharArray();
         // char [] b=num1.toCharArray();
 
-        int a=Integer.parseInt(num1);
-        int b=Integer.parseInt(num2);
-        int c=a+b;
+        long a=Long.parseLong(num1);
+        long b=Long.parseLong(num2);
+        long c=a+b;
 
         String str1 = String.valueOf(c);
 
