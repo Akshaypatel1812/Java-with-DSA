@@ -21,7 +21,8 @@ public class ReverseStringRecursion {
         String str="akshay";
         char [] c=str.toCharArray();
         
-        String ans=Arrays.toString(reverse(c, 0, c.length-1));
+        String ans=new String(reverse(c, 0, str.length()-1));    // convert Ans array into String like this 
+        //String ans=Arrays.toString(reverse(c, 0, str.length()-1));   // Not like this because this will gives you individuals char
         System.out.println(ans);    
     } 
 }

@@ -1,18 +1,24 @@
+import java.util.ArrayList;
+
 public class SubseqString {
 
-    static void subseq(String s,String ans){
+    static ArrayList<String> subseq(String s,String ans,ArrayList<String>list){
         if(s.isEmpty()){
-            System.out.println(ans);
-            return ;
+            list.add(ans);
+            return list;
         }
 
         char c=s.charAt(0);
-        subseq(s.substring(1), ans+c);
-        subseq(s.substring(1), ans);
+        subseq(s.substring(1), ans,list);
+        subseq(s.substring(1), ans+c,list);
+        
+
+        return list;
     }
     public static void main(String[] args) {
-        String s="abc";
+        String s="123";
         String ans="";
-        subseq(s, ans);
+        ArrayList<String>list=new ArrayList<>();
+        System.out.println(subseq(s, ans,list));
     }
 }
