@@ -13,5 +13,8 @@ public class oop2 {
     public static void main(String[] args) {
         oop2 obj1=new oop2();               // here when i intitialize an object then dafault constructor 
         oop2 obj2=new oop2("hello Java");
+
+        //if i only have parameterized constructor and i call non parameterized constructor than it will give me an error it doesn't call default constructor 
+        //default constructor will only call when we doesn't have any constructor
     }
 }
