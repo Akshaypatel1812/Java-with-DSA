@@ -1,5 +1,4 @@
 
-
 class birds{
     void fly(){
         System.out.println("Birds are flying");
