@@ -29,7 +29,7 @@ public class OOP3 {
         a obj1 = new a();
         obj1.showA();
         // obj3.showB();
-        // obj3.showC();
+        // obj
 
         b obj2=new b();
         obj2.showA();
