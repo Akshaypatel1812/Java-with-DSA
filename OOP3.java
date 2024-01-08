@@ -5,7 +5,7 @@
 //here if class b & c both extends a then it is multiple constructor 
 //here hierarchical & hybrid constructor is not support by java -> why? ->refer oop3 notes
 
-public class OOP3 {
+public class oop3 {
 
     static class a {
         void showA() {
