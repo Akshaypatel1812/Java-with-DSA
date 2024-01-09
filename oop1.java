@@ -6,7 +6,7 @@ class birds{
 }
 public class oop1 {
 
-    public void eat(){                   //here if i want to call this methid with out static then i will have to create object for this
+    public void eat(){                   //here if i want to call this method with out static then i will have to create object for this
         System.out.println("animal is eating");
     }
 

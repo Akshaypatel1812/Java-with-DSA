@@ -10,7 +10,7 @@ public class StringEvenWord {
     }
 
     public static void main(String[] args) {
-        String str = "akshay kiritbhaig patel";
+        String str = "akshay kiritbhai patel";
 
         printEvenWord(str);
 
