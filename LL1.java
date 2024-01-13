@@ -1,5 +1,4 @@
 
-
 public class LL1 {
     node head;
 
@@ -18,7 +17,7 @@ public class LL1 {
         node newnode = new node(data);
         if (head == null) {
             head = newnode;
-            return ;
+            return;
         }
 
         newnode.next = head;
@@ -31,7 +30,7 @@ public class LL1 {
         node newnode = new node(data);
         if (head == null) {
             head = newnode;
-            return ;
+            return;
         }
 
         node tempnode = head;
@@ -44,21 +43,53 @@ public class LL1 {
     }
 
     // add-mid
-    public void addmid(int data,int index){
+    public void addmid(int data, int index) {
         node newnode = new node(data);
         if (head == null) {
             head = newnode;
-            return ;
+            return;
         }
-        int i=1;
+        int i = 1;
         node tempnode = head;
         while (i != index) {
             tempnode = tempnode.next;
             i++;
         }
 
-        newnode.next=tempnode.next;
-        tempnode.next=newnode;
+        newnode.next = tempnode.next;
+        tempnode.next = newnode;
+    }
+
+    // delete first
+    public void deletefirst() {
+        if (head == null) {
+            System.out.println("list is empty");
+            return;
+        }
+
+        head = head.next; // here old head will automatically collect by garbage collector
+    }
+
+    // delete last
+    public void deletelast() {
+        if (head == null) {
+            System.out.println("list is empty");
+            return;
+        }
+
+        if (head.next == null) {
+            head = null;
+        }
+
+        node tempforsecondlast = head;
+        node tempforlast = head.next;
+        while (tempforlast.next != null) {
+            tempforsecondlast = tempforsecondlast.next;
+            tempforlast = tempforlast.next;
+        }
+
+        tempforsecondlast.next = null;
+
     }
 
     // print linked list
@@ -67,11 +98,11 @@ public class LL1 {
 
         if (head == null) {
             System.out.println("list is empty");
-            return ;
+            return;
         }
         node tempnode = head;
         while (tempnode != null) {
-            System.out.print(tempnode.data +"->");
+            System.out.print(tempnode.data + "->");
             tempnode = tempnode.next;
         }
 
@@ -89,9 +120,12 @@ public class LL1 {
         l1.addmid(3, 2);
 
         l1.printLL();
-        
-       
 
+        l1.deletefirst();
+        l1.printLL();
+
+        l1.deletelast();
+        l1.printLL();
 
     }
 }
