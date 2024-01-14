@@ -1,4 +1,4 @@
-
+//here we see all operations by using scratch
 public class LL1 {
     node head;
     int size = 0;
