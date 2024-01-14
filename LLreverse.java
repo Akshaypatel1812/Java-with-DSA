@@ -122,7 +122,7 @@ public class LLreverse {
     }
 
     // reverse link list
-    public void reverselist() {
+    public void reverselistIteration() {
         if (head == null || head.next == null) {
             return;
         }
@@ -141,6 +141,19 @@ public class LLreverse {
         head = prevNode;
     }
 
+    public node reverselistRecursion(node head){
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        node newHead=reverselistRecursion(head.next);
+        head.next.next=head;
+        head.next=null;
+
+        return newHead;
+
+    }
+
     public static void main(String[] args) {
         LLreverse l1 = new LLreverse();
 
@@ -152,8 +165,13 @@ public class LLreverse {
 
         l1.printLL();
 
-        l1.reverselist();
+        l1.reverselistIteration();
         l1.printLL();
+
+        l1.head=l1.reverselistRecursion(l1.head);
+        l1.printLL();
+
+
 
     }
 }
