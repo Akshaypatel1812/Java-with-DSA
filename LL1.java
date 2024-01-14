@@ -1,6 +1,7 @@
 
 public class LL1 {
     node head;
+    int size = 0;
 
     class node {
         int data;
@@ -15,6 +16,7 @@ public class LL1 {
     // add-first
     public void addfirst(int data) {
         node newnode = new node(data);
+        size++;
         if (head == null) {
             head = newnode;
             return;
@@ -22,12 +24,12 @@ public class LL1 {
 
         newnode.next = head;
         head = newnode;
-
     }
 
     // add-last
     public void addlast(int data) {
         node newnode = new node(data);
+        size++;
         if (head == null) {
             head = newnode;
             return;
@@ -45,6 +47,7 @@ public class LL1 {
     // add-mid
     public void addmid(int data, int index) {
         node newnode = new node(data);
+        size++;
         if (head == null) {
             head = newnode;
             return;
@@ -67,6 +70,8 @@ public class LL1 {
             return;
         }
 
+        size--;
+
         head = head.next; // here old head will automatically collect by garbage collector
     }
 
@@ -81,6 +86,8 @@ public class LL1 {
             head = null;
         }
 
+        size--;
+
         node tempforsecondlast = head;
         node tempforlast = head.next;
         while (tempforlast.next != null) {
@@ -90,6 +97,11 @@ public class LL1 {
 
         tempforsecondlast.next = null;
 
+    }
+
+    // size of the array list
+    public int ListSize() {
+        return size;
     }
 
     // print linked list
@@ -127,5 +139,14 @@ public class LL1 {
         l1.deletelast();
         l1.printLL();
 
+        System.out.println(l1.ListSize());
+
+        l1.addfirst(1);
+        l1.printLL();
+        System.out.println(l1.ListSize());
+
+        l1.deletelast();
+        l1.printLL();
+        System.out.println(l1.ListSize());
     }
 }
