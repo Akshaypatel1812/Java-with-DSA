@@ -1,7 +1,10 @@
 //here we see all operations by using scratch
 public class LL1 {
     node head;
-    int size = 0;
+
+    // you can made alsp taul for better performance & if you dont wont to travel
+    // loop.
+    public static int size;
 
     class node {
         int data;
@@ -52,9 +55,9 @@ public class LL1 {
             head = newnode;
             return;
         }
-        int i = 1;
+        int i = 0;
         node tempnode = head;
-        while (i != index) {
+        while (i < index - 1) {
             tempnode = tempnode.next;
             i++;
         }
@@ -65,9 +68,14 @@ public class LL1 {
 
     // delete first
     public void deletefirst() {
-        if (head == null) {
+        if (size == 0) {
             System.out.println("list is empty");
             return;
+        }
+
+        if (head.next == null) {
+            head = null;
+            size = 0;
         }
 
         size--;
@@ -77,13 +85,14 @@ public class LL1 {
 
     // delete last
     public void deletelast() {
-        if (head == null) {
+        if (size == 0) {
             System.out.println("list is empty");
             return;
         }
 
         if (head.next == null) {
             head = null;
+            size = 0;
         }
 
         size--;
@@ -97,6 +106,19 @@ public class LL1 {
 
         tempforsecondlast.next = null;
 
+    }
+
+    // search iteratively
+
+    public boolean search(int data) {
+        node tempNode = head;
+        while (tempNode.next != null) {
+            if (tempNode.data == data) {
+                return true;
+            }
+            tempNode=tempNode.next;
+        }
+        return false;
     }
 
     // size of the array list
@@ -148,5 +170,14 @@ public class LL1 {
         l1.deletelast();
         l1.printLL();
         System.out.println(l1.ListSize());
+
+        l1.addlast(4);
+        l1.addlast(5);
+
+        l1.addmid(3, 2);
+        l1.printLL();
+        System.out.println(l1.ListSize());
+        
+        System.out.println(l1.search(8));
     }
 }
