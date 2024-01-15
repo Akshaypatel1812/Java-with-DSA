@@ -110,16 +110,32 @@ public class LL1 {
 
     // search iteratively
 
-    public boolean search(int data) {
+    public int search(int data) {
         node tempNode = head;
+        int i=0;
         while (tempNode.next != null) {
             if (tempNode.data == data) {
-                return true;
+                return i;
             }
             tempNode=tempNode.next;
+            i++;
         }
-        return false;
+        return -1;
     }
+
+     // search recursively
+     public int searchrecursively(node tempNode,int i,int key){
+
+        if(tempNode.next==null){
+            return -1;
+        }
+
+        if(tempNode.data == key){
+            return i;
+        }
+
+        return searchrecursively(tempNode.next,i+1, key);
+     }
 
     // size of the array list
     public int ListSize() {
@@ -178,6 +194,8 @@ public class LL1 {
         l1.printLL();
         System.out.println(l1.ListSize());
         
-        System.out.println(l1.search(8));
+        System.out.println("Your searched index is:"+l1.search(8));
+
+        System.out.println("Your searched index is:"+l1.searchrecursively(l1.head,0,4));
     }
 }
