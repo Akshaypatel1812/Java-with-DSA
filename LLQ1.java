@@ -1,4 +1,4 @@
-//
+//Remove Nth node from last index
 
 public class LLQ1 {
     node head;
