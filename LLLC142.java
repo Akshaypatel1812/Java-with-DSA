@@ -29,37 +29,37 @@ public class LLLC142 {
     // here we Remove cycle from the Linked List
 
     // public static void RemoveCycle(ListNode head) {
-    //     // first we detect the cycle
-    //     ListNode slow = head;
-    //     ListNode fast = head;
-    //     boolean detect = false;
-    //     while (fast != null && fast.next != null) {
-    //         slow = slow.next;
-    //         fast = fast.next.next;
-    //         if (fast == slow) {
-    //             detect = true;
-    //             break;
-    //         }
-    //     }
+    // // first we detect the cycle
+    // ListNode slow = head;
+    // ListNode fast = head;
+    // boolean detect = false;
+    // while (fast != null && fast.next != null) {
+    // slow = slow.next;
+    // fast = fast.next.next;
+    // if (fast == slow) {
+    // detect = true;
+    // break;
+    // }
+    // }
 
-    //     if (detect == false) {
-    //         return;
-    //     }
+    // if (detect == false) {
+    // return;
+    // }
 
-    //     ListNode prev = null;
-    //     slow = head;
+    // ListNode prev = null;
+    // slow = head;
 
-    //     while (slow != fast) {
-    //         prev = fast;
-    //         slow = slow.next;
-    //         fast = fast.next;
-    //     }
+    // while (slow != fast) {
+    // prev = fast;
+    // slow = slow.next;
+    // fast = fast.next;
+    // }
 
-    //     prev.next = null;
+    // prev.next = null;
 
     // }
-    
-    //here we detect the first index of cyclic linked list
+
+    // here we detect the first index of cyclic linked list
     public static ListNode RemoveCycle(ListNode head) {
         // first we detect the cycle
         ListNode slow = head;
@@ -73,6 +73,10 @@ public class LLLC142 {
                 break;
             }
         }
+
+        if (detect == false) {
+            return null;
+        }
         ListNode prev = null;
         slow = head;
 
@@ -83,9 +87,9 @@ public class LLLC142 {
         }
 
         // prev.next = null;
-        System.out.println(fast.val);
-        return prev;
-        
+        // System.out.println(fast.val);
+        return fast;
+
     }
 
     public static void main(String[] args) {
