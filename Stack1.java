@@ -6,6 +6,9 @@ public class Stack1 {
         static ArrayList<Integer> list = new ArrayList<>();
         static int size=0;
         // push in stack
+        public static boolean isEmpty(){
+            return list.size()==0;
+        }
         public static void push(int val) {
             
             list.add(val);
@@ -20,6 +23,9 @@ public class Stack1 {
         }
 
         public static int peek(){
+            if(isEmpty()){
+                System.out.println("list is empty");
+            }
             return list.get(list.size()-1);
         }
     }
@@ -32,10 +38,10 @@ public class Stack1 {
         s1.push(4);
 
         
-        // while(s1.size>=1){                       //pop to remove from top elements in stack
-        //      System.out.println(s1.pop());
-        // }
+        while(s1.size>=1){                       //pop to remove from top elements in stack
+             System.out.println(s1.pop());
+        }
         
-        System.out.println(s1.peek());
+        // System.out.println(s1.peek());
     }
 }
