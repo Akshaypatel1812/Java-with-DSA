@@ -81,7 +81,7 @@ public class LLLC142 {
         slow = head;
 
         while (slow != fast) {
-            prev = fast;
+            prev = fast;            //this prev is prev of fast
             slow = slow.next;
             fast = fast.next;
         }
@@ -103,7 +103,7 @@ public class LLLC142 {
 
         // System.out.println(l1.hasCycle(head));
 
-        l1.RemoveCycle(head);
+        System.out.println(l1.RemoveCycle(head));
 
         // System.out.println(l1.hasCycle(head));
 
