@@ -9,22 +9,26 @@ class StackLC678{
             if(c=='('){
                 list1.push(c);
             }
-            if (c=='*') {
-                if(list1.size()<list2.size()){
-                    list1.push(c);
-               }
-               if(list1.size()==list2.size()){
-                    break;
-               }
-               else{
-                   list2.push(c);
-               }
-            }
+           
             if (c==')') {
                 list2.push(c);
             }
             
         }
+
+        for(int j=0;j<s.length();j++){
+            char ch=s.charAt(j);
+            if (ch=='*') {
+                if(list1.size()<list2.size()){
+                    list1.push(ch);
+                } 
+                if(list1.size()>list2.size()){
+                    list2.push(ch);
+                }
+            }
+        }
+        
+        
         
         if(list1.size()==list2.size()){
             return true;
@@ -34,7 +38,7 @@ class StackLC678{
         
     }
     public static void main(String[] args) {
-        String str="(*)";
+        String str="(((((*(()((((*((**(((()()*)()()()*((((**)())*)*)))))))(())(()))())((*()()(((()((()*(())*(()**)()(())";
         System.out.println(checkValidString(str));
     }
 }
