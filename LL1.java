@@ -2,7 +2,7 @@
 public class LL1 {
     node head;
 
-    // you can made alsp taul for better performance & if you dont wont to travel
+    // you can made also tail for better performance & if you dont wont to travel
     // loop.
     public static int size;
 

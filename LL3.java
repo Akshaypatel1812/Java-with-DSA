@@ -16,7 +16,7 @@ public class LL3 {
     public static int size;
 
     //add first in doublyLL
-    public static void addfirst(int val){
+    public void addfirst(int val){
         ListNode newNode=new ListNode(val);
         size++;
         if(head==null){
@@ -31,7 +31,7 @@ public class LL3 {
     }
 
     //add last
-    public static void addlast(int val){
+    public void addlast(int val){
         ListNode newNode=new ListNode(val);
         size++;
         if(head==null){
@@ -51,7 +51,7 @@ public class LL3 {
 
 
     //remove last
-    public static void removelast(int val){
+    public void removelast(int val){
         ListNode newNode=new ListNode(val);
         if(head==null){
             head=newNode;
@@ -67,7 +67,7 @@ public class LL3 {
     }
 
     //remove first
-    public static void removefirst(){
+    public void removefirst(){
         if(head==null){
             System.out.println("Link list is empty");
             return ;
@@ -79,7 +79,7 @@ public class LL3 {
     }
 
     //print LinkList
-    public static void printLL(){
+    public void printLL(){
         if(head==null){
             System.out.println("link list is empty");
             return;
