@@ -12,34 +12,29 @@ class ListNode {
 
 public class LLLC83 {
 
+    
+
     // function of remove duplicates
 
-    public ListNode deleteDuplicates(ListNode head) {
-       
-    
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-        ListNode prev = dummy;
-        ListNode curr = head;
-    
-        while (curr != null) {
-            if (curr.next != null && curr.val == curr.next.val) {
-                while (curr.next != null && curr.val == curr.next.val) {
-                    curr = curr.next;
-                }
-                prev.next = curr.next;
-            } else {
-                prev = prev.next;
-            }
-            if (curr != null) {
-                curr = curr.next;
-            }
-    
+    public static ListNode deleteDuplicates(ListNode head) {
+        if(head==null && head.next==null){
+            return head;
         }
-    
-        return dummy.next;
+        ListNode currNode = head;
+        while (currNode.next != null) {
+           
+           if(currNode.val==currNode.next.val){
+            currNode.next=currNode.next.next;
+           }
+
+           else{
+            currNode=currNode.next;
+           } 
+        }
+
+        return head;
     }
-    
+
     // print Link list
     public static void printLL(ListNode head) {
         ListNode tempNode = head;
@@ -55,9 +50,9 @@ public class LLLC83 {
         ListNode head = new ListNode(1);
         head.next = new ListNode(1);
         head.next.next = new ListNode(2);
-        head.next.next.next = new ListNode(2);
-        head.next.next.next.next = new ListNode(2);
-        head.next.next.next.next.next = new ListNode(4);
+        // head.next.next.next = new ListNode(2);
+        // head.next.next.next.next = new ListNode(2);
+        // head.next.next.next.next.next = new ListNode(4);
 
         l1.printLL(head);
 
