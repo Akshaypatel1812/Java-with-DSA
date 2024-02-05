@@ -23,6 +23,8 @@ public class FirstLastOccurance {
 
         return FLOFI(s,end-1,c);
     }
+
+    
     public static void main(String[] args) {
         String str="abaacdaefaah";
 

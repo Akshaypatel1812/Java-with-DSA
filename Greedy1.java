@@ -11,12 +11,13 @@ public class Greedy1 {
             activities[i][2] = end[i];
         }
         Arrays.sort(activities, Comparator.comparingInt(o -> o[2]));
+        
         n = 1;
-        int endTime = activities[0][2];
+        int lastTime = activities[0][2];
         for (int k = 1; k < start.length; k++) {
-            if (activities[k][1] > endTime) {
+            if (activities[k][1] > lastTime) {
                 n++;
-                endTime = activities[k][2];
+                lastTime = activities[k][2];
             }
         }
         return n;
