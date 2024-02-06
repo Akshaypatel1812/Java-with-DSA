@@ -73,6 +73,8 @@ public class Tree1 {
 
     }
 
+
+    //here we find out the height of the tree 
     public static int height(node root){
         if(root==null){
             return 0;
@@ -83,6 +85,8 @@ public class Tree1 {
         return Math.max(lh, rh)+1;
     }
 
+
+    //here we find out the no of nodes in tree
     public static int NoOfNodes(node root){
         if(root==null){
             return 0;
@@ -93,6 +97,54 @@ public class Tree1 {
         return lh+rh+1;
     }
 
+
+    //here we find out the sum of all the nodes val
+    public static int SumofNodes(node root){
+        if(root==null){
+            return 0;
+        }
+
+        int lsum=SumofNodes(root.left);
+        int rsum=SumofNodes(root.right);
+        return lsum+rsum+root.val;
+
+    }
+
+    public static void SumofNodes2(node root,int sum){
+       
+        if(root==null){
+            System.out.println(sum);
+            return;
+        }
+
+        // System.out.println(root.val);
+        sum=sum+root.val;
+        SumofNodes2(root.left,sum);
+        SumofNodes2(root.right,sum);
+       
+        
+    }
+
+    public static int diameterOfTree(node root){
+        if(root==null){
+
+            return 0;
+        }
+
+        int ld=diameterOfTree(root.left);
+        int rd=diameterOfTree(root.right);
+
+        int lh=height(root.left);
+        int rh=height(root.right);
+
+        int rootD=lh+rh+1;
+
+        int LR=Math.max(rh, lh);
+        int Root=Math.max(rootD, LR);
+
+        return Math.max(LR, Root);
+    }
+
     public static void main(String[] args) {
         node root = new node(1);
         root.left = new node(2);
@@ -100,6 +152,9 @@ public class Tree1 {
         root.left.left = new node(4);
         root.left.right = new node(5);
         root.right.right = new node(6);
+        root.left.left.left = new node(7);
+        // root.left.right.right = new node(8);
+
 
         // System.out.println("preorder traversal:");
         // preorder(root);
@@ -109,10 +164,16 @@ public class Tree1 {
         // System.out.println("\npostorder traversal:");
         // postorder(root);
 
-        BFS(root);
+        // BFS(root);
 
-        System.out.println(height(root));
+        // System.out.println(height(root));
 
-        System.out.println(NoOfNodes(root));
+        // System.out.println(NoOfNodes(root));
+
+        // System.out.println(SumofNodes(root));
+
+        // SumofNodes2(root,0);
+
+        System.out.println( diameterOfTree(root));
     }
 }
