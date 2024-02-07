@@ -139,7 +139,7 @@ public class Tree1 {
 
         int rootD=lh+rh+1;
 
-        int LR=Math.max(rh, lh);
+        int LR=Math.max(ld, rd);
         int Root=Math.max(rootD, LR);
 
         return Math.max(LR, Root);
@@ -177,5 +177,7 @@ public class Tree1 {
         System.out.println( diameterOfTree(root));
 
         System.out.println(SumofNodes(root));
+
+        
     }
 }
