@@ -175,5 +175,7 @@ public class Tree1 {
         // SumofNodes2(root,0);
 
         System.out.println( diameterOfTree(root));
+
+        System.out.println(SumofNodes(root));
     }
 }
