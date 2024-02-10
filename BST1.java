@@ -1,3 +1,5 @@
+import java.util.*;
+
 class TreeNode {
     int val;
     TreeNode left;
@@ -104,7 +106,7 @@ public class BST1 {
     static int sum = 0;
 
     public static int rangeSumBST(TreeNode root, int low, int high) {
-        sum=0;
+        sum = 0;
         if (root == null) {
             return sum;
         }
@@ -117,10 +119,34 @@ public class BST1 {
         return sum;
     }
 
+    public static void printpath(ArrayList<Integer> list) {
+        for (int i = 0; i < list.size(); i++) {
+            System.out.print(list.get(i) + "->");
+        }
+        System.out.println("Null");
+    }
+
+    public static void printRoot2Leaf(TreeNode root, ArrayList<Integer> list) {
+        if (root == null) {
+            return;
+        }
+        list.add(root.val);
+        if (root.left == null && root.right == null) {
+            System.out.println(list);
+        }
+        printRoot2Leaf(root.left, list);
+        printRoot2Leaf(root.right, list);
+
+        list.remove(list.size() - 1);
+
+    }
+    
+   
+
     public static void main(String[] args) {
-        int[] values = { 10,5,15,3,7,18 };
+        int[] values = { 8, 5, 3, 6, 10, 11, 14 };
         TreeNode root = null;
-        for (int i = 0; i < values.length - 1; i++) {
+        for (int i = 0; i < values.length; i++) {
             root = insert(root, values[i]);
         }
 
@@ -130,11 +156,12 @@ public class BST1 {
         // System.out.println(search(root, 2));
 
         // deleteNode(root, 10);
-        // inorder(root);
+        inorder(root);
 
-        printRangeVal(root, 5, 11);
+        // printRangeVal(root, 5, 11);
 
-        System.out.println("\n" + rangeSumBST(root, 7, 15));
-
+        // System.out.println("\n" + rangeSumBST(root, 7, 15));
+        ArrayList<Integer> list = new ArrayList<>();
+        printRoot2Leaf(root, list);
     }
 }
