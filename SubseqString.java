@@ -11,7 +11,7 @@ public class SubseqString {
         char c=s.charAt(0);
         subseq(s.substring(1), ans,list);
         subseq(s.substring(1), ans+c,list);
-        
+
 
         return list;
     }

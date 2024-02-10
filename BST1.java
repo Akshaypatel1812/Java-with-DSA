@@ -141,10 +141,32 @@ public class BST1 {
 
     }
     
+    public static TreeNode mirrorTree(TreeNode root){
+        if(root==null){
+            return null;
+        }
+
+        TreeNode leftMirror=mirrorTree(root.left);
+        TreeNode rightMirror=mirrorTree(root.right);
+
+        root.left=rightMirror;
+        root.right=leftMirror;
+
+        return root;
+        
+    }
    
 
     public static void main(String[] args) {
         int[] values = { 8, 5, 3, 6, 10, 11, 14 };
+
+    //       8
+    //     /   \
+    //    5     10
+    //   / \      \
+    //  3   6     11
+    //            /
+    //           14
         TreeNode root = null;
         for (int i = 0; i < values.length; i++) {
             root = insert(root, values[i]);
@@ -161,7 +183,19 @@ public class BST1 {
         // printRangeVal(root, 5, 11);
 
         // System.out.println("\n" + rangeSumBST(root, 7, 15));
-        ArrayList<Integer> list = new ArrayList<>();
-        printRoot2Leaf(root, list);
+        // ArrayList<Integer> list = new ArrayList<>();
+        // printRoot2Leaf(root, list);
+
+        root=mirrorTree(root);
+    //       8
+    //     /   \
+    //   10     5
+    //      \   / \
+    //      11 6   3
+    //          \
+    //          14
+
+        System.out.println("\ninorder after mirror");
+        inorder(root);
     }
 }

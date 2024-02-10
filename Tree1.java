@@ -1,5 +1,7 @@
 import java.util.*;
 
+import org.w3c.dom.Node;
+
 // import queueUsing2Stacks.Queue;
 
 class node {
@@ -70,7 +72,24 @@ public class Tree1 {
                 }
             }
         }
+    }
 
+    public static void dfs(node node, String path) {
+        if (node == null)
+            return;
+
+        // Append the current node's value to the path
+        path += node.val;
+
+        // If the current node is a leaf, print the path
+        if (node.left == null && node.right == null) {
+            System.out.println(path);
+            return;
+        }
+
+        // Continue DFS traversal for left and right subtrees
+        dfs(node.left, path );
+        dfs(node.right, path);
     }
 
 
@@ -174,9 +193,11 @@ public class Tree1 {
 
         // SumofNodes2(root,0);
 
-        System.out.println( diameterOfTree(root));
+        // System.out.println( diameterOfTree(root));
 
-        System.out.println(SumofNodes(root));
+        // System.out.println(SumofNodes(root));
+
+        dfs(root,"");
 
         
     }
