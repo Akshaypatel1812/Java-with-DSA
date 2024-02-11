@@ -24,6 +24,16 @@ public class PracticeTree {
 
         return sum;
     }
+
+    public static int height(TreeNode root){
+        if(root==null){
+            return 0;
+        }
+
+        int lh=height(root.left);
+        int rh=height(root.right);
+        return Math.max(lh, rh)+1;
+    }
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
@@ -33,7 +43,9 @@ public class PracticeTree {
         root.right.right = new TreeNode(6);
         root.left.left.left = new TreeNode(7);
 
-        System.out.println(sumLeaf(root, 0));
+        // System.out.println(sumLeaf(root, 0));
+
+        System.out.println(height(root));
     
     }
 }
