@@ -50,6 +50,6 @@ public class TreeLC102 {
         root.left.right = new TreeNode(5);
         root.right.right = new TreeNode(6);
 
-        levelOrder(root);
+        System.out.println(levelOrder(root));
     }
 }
