@@ -13,7 +13,7 @@ public class StringLC3 {
 
     public static void main(String[] args) {
         String a = "leetcode";
-        String needle = "to";
+        String needle = "tc";
 
         System.out.println(strStr(a, needle));
     }
