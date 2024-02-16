@@ -56,6 +56,7 @@ public class Tree1 {
         while (!q.isEmpty()) {
             node currNode = q.remove();
             if (currNode == null) {
+                
                 System.out.println();
                 if (q.isEmpty()) {
                     break;
@@ -183,7 +184,7 @@ public class Tree1 {
         // System.out.println("\npostorder traversal:");
         // postorder(root);
 
-        // BFS(root);
+        BFS(root);
 
         // System.out.println(height(root));
 
@@ -197,7 +198,7 @@ public class Tree1 {
 
         // System.out.println(SumofNodes(root));
 
-        dfs(root,"");
+        // dfs(root,"");
 
         
     }
