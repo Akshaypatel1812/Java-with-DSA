@@ -7,11 +7,11 @@ public class StringLC4 {
         while (start < end) {
             char b = c[start];
             char e = c[end];
-            if (start < end && ((b != 'a' && b != 'e' && b != 'i' && b != 'o' && b != 'u')&&(b != 'A' && b != 'E' && b != 'I' && b != 'O' && b != 'U'))) {
+            while ((start < end) && ((b != 'a' && b != 'e' && b != 'i' && b != 'o' && b != 'u')&&(b != 'A' && b != 'E' && b != 'I' && b != 'O' && b != 'U'))) {
                 start++;
             }
 
-            if (start < end && ((e != 'a' && e != 'e' && e != 'i' && e != 'o' && e != 'u')&& (e != 'A' && e != 'E' && e != 'I' && e != 'O' && e != 'U'))) {
+            while ((start < end) && ((e != 'a' && e != 'e' && e != 'i' && e != 'o' && e != 'u')&& (e != 'A' && e != 'E' && e != 'I' && e != 'O' && e != 'U'))) {
                 end--;
             }
 
