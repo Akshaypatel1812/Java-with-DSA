@@ -4,8 +4,6 @@ import java.util.*;
 
 public class ArrayLC414 {
     public static int thirdMax(int[] nums) {
-    
-
         TreeSet<Integer>list=new TreeSet<>();
         for(int i=0;i<nums.length;i++){
         
