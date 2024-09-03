@@ -1,36 +1,42 @@
-import java.util.Arrays;
+import java.util.*;
 
 public class StringLC205 {
     public static boolean isIsomorphic(String s, String t) {
-        if (s.length() != t.length()) {
-            return false;
-        }
+        HashMap<Character, Character> list = new HashMap<>();
+        HashMap<Character, Character> list2 = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (list.containsKey(s.charAt(i))) {
+                char c = list.get(s.charAt(i));
+                if (c == t.charAt(i)) {
 
-        // char [] a=s.toCharArray();
-        // char [] b=s.toCharArray();
-
-        // Arrays.sort(a);
-        // Arrays.sort(b);
-
-        // s=a.toString();
-        // t=b.toString();
-
-        for (int i = 0; i < s.length()-1; i++) {
-            
-            if(s.charAt(i)==s.charAt(i+1)){
-                if(t.charAt(i)!=t.charAt(i+1)){
+                } else {
                     return false;
                 }
+            } else {
+                list.put(s.charAt(i), t.charAt(i));
+            }
 
+            if (list2.containsKey(t.charAt(i))) {
+                char d = list2.get(t.charAt(i));
+                if (d == s.charAt(i)) {
+
+                } else {
+                    return false;
+                }
+            } else {
+                list2.put(t.charAt(i), s.charAt(i));
             }
         }
+
+        System.out.println(list);
+        System.out.println(list2);
 
         return true;
     }
 
     public static void main(String[] args) {
-        String s = "paper";
-        String t = "title";
+        String s = "badc";
+        String t = "baba";
 
         System.out.println(isIsomorphic(s, t));
     }
