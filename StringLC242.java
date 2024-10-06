@@ -6,28 +6,38 @@ public class StringLC242 {
         if(s.length()!=t.length()){
             return false;
         }
-        int [] one=new int[s.length()];
-        int [] two=new int[t.length()];
-        for(int i=0;i<s.length();i++){
-            one[i]=s.charAt(i);
-            two[i]=t.charAt(i);
+        HashMap<Character, Integer> list = new HashMap<>();
+        HashMap<Character, Integer> list2 = new HashMap<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            if (list.containsKey(s.charAt(i))) {
+                int val = list.get(s.charAt(i));
+                list.put(s.charAt(i), val + 1);
+            } else {
+                list.put(s.charAt(i), 1);
+            }
+
+            if (list2.containsKey(t.charAt(i))) {
+                int val = list2.get(t.charAt(i));
+                list2.put(t.charAt(i), val + 1);
+            } else {
+                list2.put(t.charAt(i), 1);
+            }
         }
 
-        Arrays.sort(one);
-        Arrays.sort(two);
-        if(Arrays.equals(one, two)){
+        
+        if(list.equals(list2)){
             return true;
         }
+
         return false;
-
     }
-    public static void main(String[] args) {
-        String temp="rat";
-        String temp2="car";
-        
-        
-        System.out.println(isAnagram(temp, temp2));
 
+    public static void main(String[] args) {
+        String temp = "a";
+        String temp2 = "ab";
+
+        System.out.println(isAnagram(temp, temp2));
 
     }
 }
